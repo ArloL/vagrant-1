@@ -4,8 +4,8 @@
     "os": "15.0",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/distribution/leap/15.0/iso/openSUSE-Leap-15.0-NET-x86_64.iso",
-    "iso_checksum": "1a322de7c215da96fdbad4c247d218eb79073c5620a332a759c0291b44746fbc",
+    "iso_url": "http://download.opensuse.org/distribution/leap/15.0/iso/openSUSE-Leap-15.0-DVD-x86_64.iso",
+    "iso_checksum": "c477428c7830ca76762d2f78603e13067c33952b936ff100189523e1fabe5a77",
     "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
@@ -192,6 +192,11 @@
     }
   ],
   "provisioners": [
+    {
+      "type": "file",
+      "destination": "/tmp/vagrant.pub",
+      "source": "vagrant.pub"
+    },
     {
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "type": "shell",
